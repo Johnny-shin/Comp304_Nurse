@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Hyunjong_Shin_Ibrahim_Jomma_COMP304_Lab04</string>
+
+    <string name="shared_preference_text">SHARED_PREFERENCE</string>
+    <string name="shared_preference_NURSE_ID">NURSE_ID</string>
+    <string name="shared_preference_Login">AUTHURIZED_NURSE</string>
+</resources>
