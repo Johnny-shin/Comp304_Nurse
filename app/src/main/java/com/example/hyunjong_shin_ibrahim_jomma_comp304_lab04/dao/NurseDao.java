@@ -1,10 +1,13 @@
-package com.example.hyunjong_shin_ibrahim_jomma_comp304_lab04;
+package com.example.hyunjong_shin_ibrahim_jomma_comp304_lab04.dao;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
+import androidx.room.Database;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+
+import com.example.hyunjong_shin_ibrahim_jomma_comp304_lab04.model.Nurse;
 
 import java.util.List;
 
@@ -18,6 +21,8 @@ public interface NurseDao {
     @Query("SELECT * FROM nurse_table")
     LiveData<List<Nurse>> getAllNurse();
 
+    @Query("SELECT * FROM nurse_table")
+    List<Nurse> getSavedUsersLists();
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insertNurse(Nurse nurse);
@@ -26,8 +31,10 @@ public interface NurseDao {
     @Query("DELETE FROM nurse_table")
     void deleteAllNurse();
 
+
     @Query("SELECT * FROM nurse_table WHERE nurseId = :nurseId LIMIT 1")
-    public abstract Nurse findOneNurseName(int nurseId);
+    Nurse findOneNurseName(int nurseId);
 
 
 }
+

@@ -52,6 +52,7 @@
             android:id="@+id/btnPatientList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="btnTestList"
             android:text="Patient List" />
 
         <Button

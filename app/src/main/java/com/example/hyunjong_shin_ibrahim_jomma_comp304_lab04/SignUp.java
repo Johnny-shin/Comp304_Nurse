@@ -10,6 +10,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.hyunjong_shin_ibrahim_jomma_comp304_lab04.model.Nurse;
+import com.example.hyunjong_shin_ibrahim_jomma_comp304_lab04.viewmodel.NurseViewModel;
+
 public class SignUp extends AppCompatActivity {
 
     EditText etNurseId, etFirstName, etLastName, etDepartment, etPassword, etPasswordComfirm;

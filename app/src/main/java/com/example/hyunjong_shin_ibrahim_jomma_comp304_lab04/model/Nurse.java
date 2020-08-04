@@ -1,4 +1,4 @@
-package com.example.hyunjong_shin_ibrahim_jomma_comp304_lab04;
+package com.example.hyunjong_shin_ibrahim_jomma_comp304_lab04.model;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
