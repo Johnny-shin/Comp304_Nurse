@@ -10,7 +10,7 @@ import com.example.hyunjong_shin_ibrahim_jomma_comp304_lab04.dao.PatientDao;
 import com.example.hyunjong_shin_ibrahim_jomma_comp304_lab04.model.Nurse;
 import com.example.hyunjong_shin_ibrahim_jomma_comp304_lab04.model.Patient;
 
-@Database(entities = {Patient.class}, version = 1)
+@Database(entities = {Patient.class, Nurse.class}, version = 1, exportSchema = false)
 public abstract class PatientRoomDatabase extends RoomDatabase {
     private static final String DATABASE = "Patient";
     private static PatientRoomDatabase instance;

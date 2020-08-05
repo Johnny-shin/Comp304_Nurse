@@ -26,6 +26,11 @@ public class PatientDataRepository {
         return mPatientDao.SyncGetPatientByNurseId(nurseId);
     }
 
+    public void insertPatient(Patient patient){
+        mPatientDao.insertPatient(patient);
+    }
+
+
 }
 
 

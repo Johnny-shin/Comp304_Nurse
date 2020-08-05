@@ -52,13 +52,14 @@
             android:id="@+id/btnPatientList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="btnTestList"
+            android:onClick="btnPatientListOnClick"
             android:text="Patient List" />
 
         <Button
             android:id="@+id/btnTestList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="btnTestListOnClick"
             android:text="Test List" />
 
         <Button

@@ -8,10 +8,13 @@ import androidx.room.PrimaryKey;
 
 import static androidx.room.ForeignKey.CASCADE;
 
-@Entity(tableName = "patient_table", foreignKeys = @ForeignKey(entity = Nurse.class,
-                                                                parentColumns = "nurseId",
-                                                                childColumns = "userId",
-                                                                onDelete = CASCADE))
+//@Entity(tableName = "patient_table", foreignKeys = @ForeignKey(entity = Nurse.class,
+//        parentColumns = "nurseId",
+//        childColumns = "patientId",
+//        onDelete = ForeignKey.CASCADE))
+
+
+@Entity(tableName = "patient_table")
 public class Patient {
 
     @PrimaryKey(autoGenerate = true)

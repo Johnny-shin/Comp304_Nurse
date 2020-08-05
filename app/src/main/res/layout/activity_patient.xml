@@ -4,11 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".PatientActivity">
 
-    <ListView
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="btnPatientRegister"
+        android:text="Register Patient" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPatientList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@android:id/list"
-        />
+        android:orientation="vertical" />
+
+<!--        <ListView-->
+<!--            android:id="@+id/patientList"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent" />-->
+<!--    </androidx.recyclerview.widget.RecyclerView>-->
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" />-->
+
 </LinearLayout>

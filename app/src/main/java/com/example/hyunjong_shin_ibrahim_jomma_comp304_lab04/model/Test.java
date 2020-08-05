@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "test_table")
 public class Test {
 
-    @PrimaryKey
+    @PrimaryKey()
     @NonNull
     @ColumnInfo(name = "testId")
     private int testId;

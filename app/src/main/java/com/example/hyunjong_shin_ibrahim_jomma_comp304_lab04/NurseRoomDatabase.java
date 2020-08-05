@@ -11,13 +11,14 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.example.hyunjong_shin_ibrahim_jomma_comp304_lab04.dao.NurseDao;
 import com.example.hyunjong_shin_ibrahim_jomma_comp304_lab04.model.Nurse;
+import com.example.hyunjong_shin_ibrahim_jomma_comp304_lab04.model.Patient;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 
-@Database(entities = {Nurse.class}, version = 1)
+@Database(entities = {Nurse.class, Patient.class}, version = 1, exportSchema = false)
 public abstract class NurseRoomDatabase extends RoomDatabase{
     private static final String DATABASE = "Nurse";
     private static NurseRoomDatabase instance;

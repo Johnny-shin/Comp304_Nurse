@@ -20,5 +20,5 @@ public interface PatientDao {
     List<Patient> SyncGetPatientByNurseId(int nurseId);
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    void insertPatient();
+    void insertPatient(Patient patient);
 }
