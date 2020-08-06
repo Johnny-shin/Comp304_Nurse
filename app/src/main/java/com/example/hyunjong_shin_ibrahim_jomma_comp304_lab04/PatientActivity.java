@@ -19,7 +19,7 @@ import com.example.hyunjong_shin_ibrahim_jomma_comp304_lab04.viewmodel.PatientVi
 
 import java.util.List;
 
-public class PatientActivity extends AppCompatActivity  {
+public class PatientActivity extends AppCompatActivity implements PatientAdapter.ItemClickListener {
 
     private int nurseId;
     private PatientViewModel mPatientViewModel;
@@ -42,6 +42,7 @@ public class PatientActivity extends AppCompatActivity  {
             rvPatientList = (RecyclerView) findViewById(R.id.rvPatientList);
             rvPatientList.setLayoutManager(new LinearLayoutManager(this));
             PatientAdapter patientAdapter = new PatientAdapter(this, patients);
+            patientAdapter.setItemClickListener(this);
             rvPatientList.setAdapter(patientAdapter);
         }
 
@@ -56,4 +57,12 @@ public class PatientActivity extends AppCompatActivity  {
         finish();
     }
 
+    @Override
+    public void onItemClick(View view, int position) {
+        Patient temp = patients.get(position);
+        Intent intent = new Intent(this, ViewTestInfoActivity.class);
+        intent.putExtra("PatientFullName", temp.getFirstname()+" " +temp.getLastname());
+        intent.putExtra("PatientId", temp.getPatientId());
+        startActivity(intent);
+    }
 }

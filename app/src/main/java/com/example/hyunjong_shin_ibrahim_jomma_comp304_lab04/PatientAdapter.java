@@ -18,10 +18,10 @@ import com.example.hyunjong_shin_ibrahim_jomma_comp304_lab04.model.Patient;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.ViewHolder> {
+public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.ViewHolder>{
     private List<Patient> patients;
     private static LayoutInflater layoutInflater = null;
-    private ItemClickListener mClickListener;
+    private static ItemClickListener mClickListener;
 
     public PatientAdapter(@NonNull Context context, @NonNull List<Patient> patients) {
         layoutInflater = LayoutInflater.from(context);
@@ -39,9 +39,9 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Patient temp = patients.get(position);
-        holder.tvPatientId.setText(temp.getPatientId()+"");
-        holder.tvPatientName.setText(temp.getLastname() + " " + temp.getLastname());
-        holder.tvRoom.setText(temp.getRoom());
+        holder.tvPatientId.setText("ID: "+temp.getPatientId()+"");
+        holder.tvPatientName.setText(temp.getFirstname()+ " " + temp.getLastname());
+        holder.tvRoom.setText("Room: " + temp.getRoom());
         holder.tvDepartment.setText(temp.getDepartment());
     }
 
@@ -52,6 +52,10 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.ViewHold
 
     public Patient getItem(int position) {
         return patients.get(position);
+    }
+
+    public void setItemClickListener(ItemClickListener itemClickListener) {
+        this.mClickListener = itemClickListener;
     }
 
     public interface ItemClickListener{
@@ -77,10 +81,16 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.ViewHold
 
         @Override
         public void onClick(View view) {
-            Toast.makeText(view.getContext(), "position : " + getLayoutPosition(), Toast.LENGTH_SHORT).show();
-//            Toast.makeText(view.getContext(), "position : " + patients.get(getLayoutPosition()), Toast.LENGTH_SHORT).show();
-//            patients.get(getLayoutPosition());
+            if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
         }
+//        @Override
+//        public void onClick(View view) {
+//            Toast.makeText(view.getContext(), "position : " + getLayoutPosition(), Toast.LENGTH_SHORT).show();
+//            if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
+//
+////            Toast.makeText(view.getContext(), "position : " + patients.get(getLayoutPosition()), Toast.LENGTH_SHORT).show();
+////            patients.get(getLayoutPosition());
+//        }
     }
 
 

@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
     //SignUp
     public void SignUp(View view){
             Intent intent = new Intent(this, SignUp.class);
@@ -85,6 +86,15 @@ public class MainActivity extends AppCompatActivity {
     public void btnTestListOnClick(View view){
         if(isLogIned) {
             Intent intent = new Intent(this, PatientActivity.class);
+            startActivity(intent);
+        }else{
+            Toast.makeText(this, "Please Sign In First!!!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void btnUpdatePatient(View view){
+        if(isLogIned) {
+            Intent intent = new Intent(this, PatientUpdateActivity.class);
             startActivity(intent);
         }else{
             Toast.makeText(this, "Please Sign In First!!!", Toast.LENGTH_SHORT).show();

@@ -5,55 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".PatientRegisterActivity">
+    tools:context=".TestActivity">
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Patient Register Form"
+        android:text="Test Register Form"
         android:textAlignment="center"
         android:textColor="@android:color/background_dark"
         android:textSize="36sp"
         android:textStyle="bold|italic" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/textView13"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15px"
         android:layout_marginTop="10px"
         android:layout_marginBottom="0px"
-        android:text="First Name"
+        android:text="Test"
         android:textAlignment="textStart"
         android:textColor="@android:color/background_dark"
         android:textSize="24sp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/etPatientFirstName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10px"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15px"
-        android:layout_marginTop="10px"
-        android:layout_marginBottom="0px"
-        android:text="Last Name"
-        android:textAlignment="textStart"
-        android:textColor="@android:color/background_dark"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/etPatientLastName"
+        android:id="@+id/etTestName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10px"
@@ -61,20 +39,20 @@
         android:inputType="textPersonName" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/textView14"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15px"
         android:layout_marginTop="10px"
         android:layout_marginBottom="0px"
-        android:text="Department"
+        android:text="Description"
         android:textAlignment="textStart"
         android:textColor="@android:color/background_dark"
         android:textSize="24sp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/etPatientDepartment"
+        android:id="@+id/etTestDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10px"
@@ -82,20 +60,20 @@
         android:inputType="textPersonName" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/textView15"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15px"
         android:layout_marginTop="10px"
         android:layout_marginBottom="0px"
-        android:text="Room"
+        android:text="Temperature"
         android:textAlignment="textStart"
         android:textColor="@android:color/background_dark"
         android:textSize="24sp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/etPatientRoom"
+        android:id="@+id/etTemperature"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10px"
@@ -112,7 +90,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="btnPatientFormClear"
+            android:onClick="btnTestClear"
             android:text="Clear" />
 
         <Button
@@ -120,7 +98,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="btnPatientRigister"
+            android:onClick="TestRegister"
             android:text="Register" />
     </LinearLayout>
-</LinearLayout>
+
+    </LinearLayout>

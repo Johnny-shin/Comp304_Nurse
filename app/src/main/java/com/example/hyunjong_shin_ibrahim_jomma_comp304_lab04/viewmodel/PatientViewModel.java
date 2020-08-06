@@ -36,15 +36,22 @@ public class PatientViewModel extends AndroidViewModel {
         return mRepository.getAllPatientByNurseId(nurseId);
     }
 
+    public List<Patient> getAllPatient() {
+        return mRepository.getAllPatient();
+    }
+
 
     public List<Patient> SyncGetPatientByNurseId(int nurseId) {
         return mRepository.SyncGetPatientByNurseId(nurseId);
     }
 
-    public void insertPatient(Patient patient){
+    public void insertPatient(Patient patient) {
         mRepository.insertPatient(patient);
     }
 
+    public void updatePatient(Patient patient){
+        mRepository.updatePatient(patient);
+    }
 
 
 

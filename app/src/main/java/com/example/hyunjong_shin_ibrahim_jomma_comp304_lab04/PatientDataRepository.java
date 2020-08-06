@@ -30,27 +30,15 @@ public class PatientDataRepository {
         mPatientDao.insertPatient(patient);
     }
 
+    public List<Patient> getAllPatient(){
+       return mPatientDao.getAllPatient();
+    }
+
+    public void updatePatient(Patient patient){
+        mPatientDao.updatePatient(patient);
+    }
+
 
 }
 
 
-//    public LiveData<List<Nurse>> getAllNurses(){return mAllNurse;}
-//
-//    public void insert(Nurse nurse){
-//        mNurseDao.insertNurse(nurse);
-////        NurseRoomDatabase.databaseWriteExecutor.execute(()->{
-////            mNurseDao.insertNurse(nurse);
-////        });
-//    }
-//
-//    //    Nurse findOneNurseName(int nurseId){
-////        Nurse nurse = NurseRoomDatabase.databaseWriteExecutor.execute(()->{
-////             mNurseDao.findOneNurseName(nurseId);
-////        });
-////         return nurse;
-////    }
-//    public Nurse findOneNurseName(int nurseId){
-//        Nurse nurse = mNurseDao.findOneNurseName(nurseId);
-//        return nurse;
-//    }
-//}

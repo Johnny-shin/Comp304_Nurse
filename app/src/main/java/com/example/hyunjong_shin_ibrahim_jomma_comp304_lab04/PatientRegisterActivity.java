@@ -17,6 +17,8 @@ public class PatientRegisterActivity extends AppCompatActivity {
     PatientViewModel mPatientViewModel;
     EditText etPatientFirstName, etPatientLastName, etPatientDepartment, etPatientRoom;
     int nurseId;
+    boolean isUpdated = false;
+    int updatePatientId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,22 +31,34 @@ public class PatientRegisterActivity extends AppCompatActivity {
         etPatientLastName = (EditText) findViewById(R.id.etPatientLastName);
         etPatientDepartment = (EditText) findViewById(R.id.etPatientDepartment);
         etPatientRoom = (EditText) findViewById(R.id.etPatientRoom);
+
+        Intent intent = getIntent();
+        updatePatientId = intent.getExtras().getInt("UpdatePatientId", -1);
+        if (updatePatientId != -1) {
+            isUpdated = true;
+        }
+
     }
 
-    public void btnPatientRigister(View view){
+    public void btnPatientRigister(View view) {
         Patient patient = new Patient();
         patient.setFirstname(etPatientFirstName.getText().toString());
-        patient.setLastname(etPatientFirstName.getText().toString());
-        patient.setDepartment(etPatientFirstName.getText().toString());
-        patient.setRoom(etPatientFirstName.getText().toString());
+        patient.setLastname(etPatientLastName.getText().toString());
+        patient.setDepartment(etPatientDepartment.getText().toString());
+        patient.setRoom(etPatientRoom.getText().toString());
         patient.setNurseId(nurseId);
-        mPatientViewModel.insertPatient(patient);
+        if (isUpdated) {
+            patient.setPatientId(updatePatientId);
+            mPatientViewModel.updatePatient(patient);
+        } else {
+            mPatientViewModel.insertPatient(patient);
+        }
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
     }
 
-    public void btnPatientFormClear(View view){
+    public void btnPatientFormClear(View view) {
         etPatientFirstName.setText("");
         etPatientLastName.setText("");
         etPatientDepartment.setText("");

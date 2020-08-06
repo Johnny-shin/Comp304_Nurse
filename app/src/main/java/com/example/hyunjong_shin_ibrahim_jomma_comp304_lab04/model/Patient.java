@@ -1,10 +1,15 @@
 package com.example.hyunjong_shin_ibrahim_jomma_comp304_lab04.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
+
+import java.io.Serializable;
 
 import static androidx.room.ForeignKey.CASCADE;
 
@@ -106,4 +111,19 @@ public class Patient {
                 ", room='" + room + '\'' +
                 '}';
     }
+
+//    @Override
+//    public int describeContents() {
+//        return 0;
+//    }
+//
+//    @Override
+//    public void writeToParcel(Parcel dest, int flags) {
+//        dest.writeInt(this.patientId);
+//        dest.writeInt(this.nurseId);
+//        dest.writeString(this.firstname);
+//        dest.writeString(this.firstname);
+//        dest.writeString(this.department);
+//        dest.writeString(this.room);
+//    }
 }
